@@ -26,12 +26,13 @@ export default class MapView {
         
         //Add Background Mapping
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '<a href="GISforThought.com">GISforThought</a> | <a href="http://blog.thematicmapping.org/2014/08/showing-geotagged-photos-on-leaflet-map.html">Leaflet.Photo</a> | Base map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            attribution: ''
+			//'<a href="GISforThought.com">GISforThought</a> | <a href="http://blog.thematicmapping.org/2014/08/showing-geotagged-photos-on-leaflet-map.html">Leaflet.Photo</a> | Base map data &copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         //Create the photolayer
         var photoLayer = L.photo.cluster({ spiderfyDistanceMultiplier: 1.2 }).on('click', function (evt) {
-            evt.layer.bindPopup(L.Util.template('<img src="{url}" height="auto" width="100%"/>', evt.layer.photo), {
+            evt.layer.bindPopup(L.Util.template('<a href="{rawurl}" target="_blank"><img src="{url}" height="auto" width="100%"/></a>', evt.layer.photo), {
                 className: 'leaflet-popup-photo',
                 minWidth: 400
             }).openPopup();
@@ -133,9 +134,9 @@ export default class MapView {
     showFirstRunMessage() {
         var latlng = [25, 0];
         this.map.setView(latlng, 2);
-        var message = "<h2>" + t('photomap', 'You have not added photos yet?') + "</h2>" +
-            "<p>"+ t('photomap', 'Add photos to the cloud. Photos containing data about the geographical location will be automatically pinned to the map.') + "</p>" +
-            "<p>"+ t('photomap', 'If photos already are in cloud, You can pin them to the map using command {command}', {"command" : "<b>occ&nbsp;photoMap:rescanPhotos</b>"}, undefined, {escape: false}) + "</p>";
+        var message = "<h2>" + t('photomap', 'Es wurden noch keine Fotos hinzugefügt?') + "</h2>" +
+            "<p>"+ t('photomap', 'Fügen Sie Fotos zur Cloud hinzu. Fotos mit Geodaten werden automatisch auf der Karte angezeigt.') + "</p>" +
+            "<p>"+ t('photomap', 'Wenn bereits Fotodaten in die Cloud hochgeladen wurden können diese vom Administrator mit folgendem Befehl indiziert werden: {command}', {"command" : "<b>occ&nbsp;photoMap:rescanPhotos</b>"}, undefined, {escape: false}) + "</p>";
         this.showPopup(latlng, message);
     }
 

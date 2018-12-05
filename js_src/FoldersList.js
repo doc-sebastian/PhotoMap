@@ -80,7 +80,7 @@ export default class FoldersList extends React.Component {
             <li key={folder.id} className={headerClass}>
                 <button className="collapse" onClick={this.handleToggle.bind(this, folder.id)}></button>
                 <a href="#" className="icon-folder svg" title={folder.label} onClick={this.onFolderClick.bind(this, folder.id)}>{folder.label}</a>
-                <a href={folder.link} className="folder-link"><span className="icon"/></a>
+                <a href={folder.link} className="folder-link" target="_blank"><span className="icon"/></a>
                 {this.renderFolderContent(folder.id, folder.filesList, itemState)}
             </li>);
         });

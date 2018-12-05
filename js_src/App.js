@@ -17,7 +17,7 @@ import GeoPhotoHelper from './GeoPhotoHelper.js';
 
 export default class App {
 
-    TRACK_VISIBLITY_ZOOM_LEVEL = 12;
+    TRACK_VISIBLITY_ZOOM_LEVEL = 8;
 
     SHOW_ONLY_GEOPHOTOS_IN_ALBUM = true;
 
@@ -78,13 +78,13 @@ export default class App {
     }
 
     generateThumbnailUrl(filename) {
-        return "/index.php/core/preview.png?file=" + encodeURI(filename) + "&x=32&y=32";
+        return "/index.php/core/preview.png?file=" + encodeURI(filename) + "&x=70&y=70";
     }
 
     generateImageUrl(filename) {
         return "/index.php/core/preview.png?file=" + encodeURI(filename) + "&x=400&y=400";
     }
-
+	
     generateGalleryUrl(path) {
         return OC.generateUrl("apps/gallery/#" + path);
     }
@@ -101,6 +101,7 @@ export default class App {
                 lat: photos[i].lat,
                 lng: photos[i].lng,
                 url: this.generateImageUrl(photos[i].path),
+				rawurl: this.generateImageUrl(photos[i].path).replace('/index.php/core/preview.png?file=','/apps/files?dir=').replace(/\/([^\/]*)$/,'&scrollto='+'$1').replace('&x=400&y=400',''),
                 thumbnail: this.generateThumbnailUrl(photos[i].path),
                 albumId: photos[i].folderId
             });

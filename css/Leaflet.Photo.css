@@ -45,10 +45,12 @@
 	color: #555;
 	background-color: #fff;
 	border-radius: 8px;
-	height: 12px;
+	height: 16px;
 	min-width: 12px;
-	line-height: 12px;
+	line-height: 8px;
 	text-align: center;
-	padding: 3px;
+	padding: 5px;
 	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+	font-weight: bold;
+	font-size: 10px;
 }

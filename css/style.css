@@ -12,7 +12,7 @@
 }
 
 #visibleFolders .collapsible a {
-    width: 185px;
+    width: 215px;
     display: inline-block;
 }
 
@@ -26,17 +26,51 @@
 
 #visibleFolders .collapsible .folder-link{
     display: inline-block;
-    width: 44px;
-    height: 44px;
+    width: 24px;
+    height: 24px;
     padding: 0px;
     text-align: center;
     vertical-align: top;
+	z-index: 1;
 }
 
 #visibleFolders .collapsible .folder-link .icon{
-    width: 36px;
-    height: 32px;
+    width: 16px;
+    height: 16px;
+	margin-bottom:4px;
     display: inline-block;
     vertical-align: middle;
-    background-image: url('images/gallery.svg');
+    background-image: url('../../../core/img/actions/toggle-pictures.svg');
+}
+
+#visibleFolders .items-list {
+    margin:-1px;
+	margin-top: -30px;
+	padding-top: 20px;
+	padding-bottom: 10px;	
+	padding-left:4px;
+	background: #efefef;
+	border-left: 1px solid #666666;
+	border-right: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+}
+
+#visibleFolders .folder-item {
+	width:45px;
+	margin-bottom: -4px;
+}
+
+#visibleFolders .open {
+	z-index:5;
+	background: #efefef;
+	border: 1px solid #666666;
+}
+
+#visibleFolders .collapse {
+	margin: 1px;	
+}
+
+
+#app-navigation li {
+    height: 30px;
 }

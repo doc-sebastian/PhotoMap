@@ -1,7 +1,8 @@
 # Modified Photo Map by BatPio
 
-This Nextcloud Photomap Fork shows geotagged photos on a map.
+This really awesome Nextcloud Photomap Fork shows geotagged photos on a map.
 It has a different, more monochrome styling and better links to the files and gallery app than the Original from BatPio.
+Thanks so much to BatPio for this awesome app! Never shoot photos without GPS again ;-)
 
 It's fully translated to German language.
 
